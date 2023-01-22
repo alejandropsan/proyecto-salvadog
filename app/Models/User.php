@@ -41,4 +41,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    // Relación One to One
+    public function role(){
+        return $this->belongsTo('App\Models\Role_user', 'id_role');
+    }
+
 }
